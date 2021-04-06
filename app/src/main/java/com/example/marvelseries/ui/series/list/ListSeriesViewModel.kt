@@ -20,25 +20,7 @@ class ListSeriesViewModel : ViewModel() {
     private val _msg = MutableLiveData<String>()
     val msg: LiveData<String> = _msg
 
-    //init {
-    //    viewModelScope.launch {
-    //        try {
-    //            val response =
-    //                ApiClient
-    //                    .getSeriesService().all(20, 100)
-    //            val data = response.data
-    //            if
-    //                    (data!= null)
-    //                _series.value = data!!.results
-    //        }catch (e: Exception){
-    //            Log.i("LCVWResponde",
-    //                "${e.message}")
 
-    //        }
-
-    //    }
-    //}
-//}
 
     init {
         viewModelScope.launch {
@@ -51,3 +33,23 @@ class ListSeriesViewModel : ViewModel() {
         }
     }
 }
+
+//init {
+//    viewModelScope.launch {
+//        try {
+//            val response =
+//                ApiClient
+//                    .getSeriesService().all(20, 100)
+//            val data = response.data
+//            if
+//                    (data!= null)
+//                _series.value = data!!.results
+//        }catch (e: Exception){
+//            Log.i("LCVWResponde",
+//                "${e.message}")
+
+//        }
+
+//    }
+//}
+//}

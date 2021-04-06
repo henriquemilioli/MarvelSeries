@@ -16,6 +16,6 @@ interface SeriesService {
         @Query("apikey") apikey: String = "bd936775caa3f5b72a1d43452a19b5bf",
         @Query("hash") hash: String = "8bbbfa10a8ecff03c19dda026cd9e397",
 
-        ): Response
+        ): List<Series>
 
 }
