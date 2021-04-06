@@ -3,11 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_navigation"
-    app:startDestination="@id/listSeriesFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/listSeriesFragment"
         android:name="com.example.marvelseries.ui.series.list.listSeriesFragment"
         android:label="list_series_fragment"
         tools:layout="@layout/list_series_fragment" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.marvelseries.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment" />
 </navigation>
