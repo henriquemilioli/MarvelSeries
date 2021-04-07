@@ -22,14 +22,11 @@ class ListSeriesViewModel : ViewModel() {
 
 
 
-    init {
+    fun getSeries() {
         viewModelScope.launch {
-            try {
-                val seriesService = ApiClient.getSeriesService()
-                _series.value = seriesService.all(20, 100)
-            } catch (e: Exception){
-                _msg.value = e.message
-            }
+            val seriesService = ApiClient.getSeriesService()
+            _series.value = seriesService.all(offset = 20, limit = 10).data?.results
+
         }
     }
 }

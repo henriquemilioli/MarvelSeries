@@ -3,14 +3,18 @@ package com.example.marvelseries.model
 import android.media.Image
 
 class Series (
-    val id: Int? = null,
-    val title: String? = null,
-    val description: String? = null,
-    val resourceURI: String? = null,
-    val startYear: Int? = null,
-    val endYear: Int? = null,
-    val thumbnail: Image? = null,
+    val id: Int?,
+    val title: String?,
+    val description: String?,
+    val resourceURI: String?,
+    val startYear: Int?,
+    val endYear: Int?,
+    val thumbnail: SerieImage?,
 ){
     override fun toString(): String = "$title"
-
 }
+
+class SerieImage (
+    val path: String?,
+    val extension: String?
+)

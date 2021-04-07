@@ -3,10 +3,12 @@ package com.example.marvelseries.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvelseries.R
 import com.example.marvelseries.model.Series
+import com.squareup.picasso.Picasso
 
 class SeriesRecyclerAdapter (
     private val series: List<Series>
@@ -16,6 +18,7 @@ class SeriesRecyclerAdapter (
         : RecyclerView.ViewHolder(itemView){
         val textViewSeriesTitle: TextView = itemView.findViewById(R.id.textViewSeriesTitle)
         val textViewSeriesAno: TextView = itemView.findViewById(R.id.textViewSeriesAno)
+        //val imageSeriesView: ImageView = itemView.findViewById(R.id.imageSeriesView)
 
     }
 
@@ -33,6 +36,8 @@ class SeriesRecyclerAdapter (
         val series = series[position]
         holder.textViewSeriesTitle.text = series.title
         holder.textViewSeriesAno.text = series.startYear.toString()
+        //Picasso.with(this).load(url).into(ImageView)
+        //holder.imageSeriesView.url = series.thumbnail?.path
     }
 
     override fun getItemCount(): Int = series.size
