@@ -14,8 +14,7 @@ class SeriesRecyclerAdapter (
     private val series: List<Series>
 ):RecyclerView.Adapter<SeriesRecyclerAdapter.SeriesViewHolder>(){
 
-    class SeriesViewHolder(itemView: View)
-        : RecyclerView.ViewHolder(itemView){
+    class SeriesViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val textViewSeriesTitle: TextView = itemView.findViewById(R.id.textViewSeriesTitle)
         val textViewSeriesAno: TextView = itemView.findViewById(R.id.textViewSeriesAno)
         //val imageSeriesView: ImageView = itemView.findViewById(R.id.imageSeriesView)
@@ -36,8 +35,7 @@ class SeriesRecyclerAdapter (
         val series = series[position]
         holder.textViewSeriesTitle.text = series.title
         holder.textViewSeriesAno.text = series.startYear.toString()
-        //Picasso.with(this).load(url).into(ImageView)
-        //holder.imageSeriesView.url = series.thumbnail?.path
+
     }
 
     override fun getItemCount(): Int = series.size

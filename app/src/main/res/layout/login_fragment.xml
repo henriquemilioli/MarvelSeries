@@ -55,6 +55,8 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
         tools:ignore="MissingConstraints" />
 
+
+
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
         android:layout_width="304dp"

@@ -1,11 +1,21 @@
 <resources>
     <string name="app_name">MarvelSeries</string>
 
-    <string name="facebook_app_id">
-        154815789877866
-    </string>
-    <string name="fb_login_protocol_scheme">
-        fb154815789877866
-    </string>
+<!--    <string name="facebook_app_id">-->
+<!--        154815789877866-->
+<!--    </string>-->
+<!--    <string name="fb_login_protocol_scheme">-->
+<!--        fb154815789877866-->
+<!--    </string>-->
+
+<!--    <string name="facebook_app_id">-->
+<!--        154815789877866-->
+<!--    </string>-->
+<!--    <string name="fb_login_protocol_scheme">-->
+<!--        fb154815789877866-->
+<!--    </string>-->
+    <string name="facebook_app_id">130197255735196</string>
+    <string name="fb_login_protocol_scheme">fb130197255735196</string>
+
 
 </resources>

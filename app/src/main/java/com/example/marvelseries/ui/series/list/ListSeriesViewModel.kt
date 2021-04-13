@@ -25,7 +25,7 @@ class ListSeriesViewModel : ViewModel() {
     fun getSeries() {
         viewModelScope.launch {
             val seriesService = ApiClient.getSeriesService()
-            _series.value = seriesService.all(offset = 20, limit = 10).data?.results
+            _series.value = seriesService.all(offset = 20, limit = 100).data?.results
 
         }
     }
