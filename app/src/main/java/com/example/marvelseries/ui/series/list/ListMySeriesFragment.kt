@@ -40,7 +40,7 @@ class listMySeriesFragment : Fragment() {
                 if (!it.isNullOrEmpty())
                     // minhaRecyclerViewWidgetId.adapter = SeuRecyclerAdapter()
                     recyclerListMySeries.adapter = RecyclerMySeries(it){
-                        SerieUtil.title = it
+                        SerieUtil.title = it.title
                         findNavController().navigate(R.id.RecyclerListMySeries)
                     }
                 //LinearLayoutManager(requireContext()).also { RecyclerMySeries.layoutManager = it }
