@@ -8,11 +8,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvelseries.R
 import com.example.marvelseries.model.Series
+import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
 
 class SeriesRecyclerAdapter (
-    private val series: List<Series>
+    private val series: List<Series>,
+    val actionClick: (Series) -> Unit
 ):RecyclerView.Adapter<SeriesRecyclerAdapter.SeriesViewHolder>(){
+
+    val storageReference = FirebaseStorage.getInstance().reference
 
     class SeriesViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val textViewSeriesTitle: TextView = itemView.findViewById(R.id.textViewSeriesTitle)
@@ -35,6 +39,10 @@ class SeriesRecyclerAdapter (
         val series = series[position]
         holder.textViewSeriesTitle.text = series.title
         holder.textViewSeriesAno.text = series.startYear.toString()
+
+        holder.itemView.setOnClickListener{
+            actionClick(series)
+        }
 
     }
 

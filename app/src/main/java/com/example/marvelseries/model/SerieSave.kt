@@ -7,5 +7,5 @@ class SerieSave (
     val resourceURI: String?,
     val startYear: Int?,
     val endYear: Int?,
-    val thumbnail: SerieImage?,
+    //val thumbnail: SerieImage?,
 )

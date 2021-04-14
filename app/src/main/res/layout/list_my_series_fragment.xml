@@ -8,7 +8,7 @@
     tools:context=".ui.series.listMySeriesFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/RecyclerLIstMySeries"
+        android:id="@+id/RecyclerListMySeries"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"

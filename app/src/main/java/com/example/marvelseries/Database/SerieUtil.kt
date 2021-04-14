@@ -5,6 +5,8 @@ import com.example.marvelseries.model.Series
 
 object SerieUtil {
     var Series : Series? = null
-    var id: String? = null
+    var id: Int? = null
+    var SerieSelecionada: Series? = null
+    var title: Series? = null
 
 }

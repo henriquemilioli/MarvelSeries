@@ -20,4 +20,9 @@
         android:name="com.example.marvelseries.ui.series.listMySeriesFragment"
         android:label="list_my_series_fragment"
         tools:layout="@layout/list_my_series_fragment" />
+    <fragment
+        android:id="@+id/detalhesFragment"
+        android:name="com.example.marvelseries.ui.series.list.DetalhesFragment"
+        android:label="detalhes_fragment"
+        tools:layout="@layout/detalhes_fragment" />
 </navigation>
