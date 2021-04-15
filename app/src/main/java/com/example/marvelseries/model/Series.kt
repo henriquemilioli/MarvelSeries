@@ -1,14 +1,13 @@
 package com.example.marvelseries.model
 
-import android.media.Image
 
 class Series (
-    val id: Int?,
-    val title: String?,
-    val description: String?,
-    val resourceURI: String?,
-    val startYear: Int?,
-    val endYear: Int?,
+    var id: Int? = null,
+    var title: String? = null,
+    var description: String? = null,
+    var resourceURI: String? = null,
+    var startYear: Int? = null,
+    var endYear: Int? = null,
 //    val thumbnail: SerieImage?,
 ){
     override fun toString(): String = "$title"

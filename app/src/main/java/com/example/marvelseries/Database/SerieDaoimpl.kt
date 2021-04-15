@@ -9,12 +9,12 @@ import com.google.firebase.firestore.QuerySnapshot
 class SerieDaoimpl: SeriesDao {
     val firebaseInstance  = FirebaseFirestore.getInstance().collection("Series")
 
-    override fun create(serie: Series): Task<Void> {
-        return firebaseInstance.document(serie.title!!.toString()).collection("SeriesUser").document().set(serie)
+    override fun create(serie: Series, userid: String): Task<Void> {
+        return firebaseInstance.document(userid).collection("SeriesUser").document(serie.id!!.toString()).set(serie)
     }
 
-    override fun delete(serie: Series): Task<Void> {
-        return firebaseInstance.document(serie.title!!.toString()).collection("SeriesUser").document().delete()
+    override fun delete(serie: Series, userid: String): Task<Void> {
+        return firebaseInstance.document(userid).collection("SeriesUser").document(serie.id!!.toString()).delete()
     }
 
     override fun all(userid:String): Task<QuerySnapshot> {

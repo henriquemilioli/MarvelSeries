@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvelseries.Database.SerieDaoimpl
 import com.example.marvelseries.Database.SerieUtil
+import com.example.marvelseries.Database.SerieUtil.title
 import com.example.marvelseries.ui.series.list.ListMySeriesViewModel
 import com.example.marvelseries.R
 import com.example.marvelseries.adapter.RecyclerMySeries
@@ -35,13 +36,13 @@ class listMySeriesFragment : Fragment() {
 
             val listMySeriesViewModelFactoryView = ListMySeriesViewModelFactory(SerieDaoimpl())
             viewModel = ViewModelProvider(this, listMySeriesViewModelFactoryView).get(ListMySeriesViewModel::class.java)
-            SerieUtil.title = null
+            viewModel.getList()
             viewModel.series.observe(viewLifecycleOwner, Observer {
                 if (!it.isNullOrEmpty())
                     // minhaRecyclerViewWidgetId.adapter = SeuRecyclerAdapter()
                     recyclerListMySeries.adapter = RecyclerMySeries(it){
-                        SerieUtil.title = it.title
-                        findNavController().navigate(R.id.RecyclerListMySeries)
+                        SerieUtil.SerieSelecionada = it
+                        findNavController().navigate(R.id.detalhesFragment)
                     }
                 //LinearLayoutManager(requireContext()).also { RecyclerMySeries.layoutManager = it }
                 recyclerListMySeries.layoutManager = LinearLayoutManager(requireContext())
@@ -55,4 +56,8 @@ class listMySeriesFragment : Fragment() {
             return  view
         }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.getList()
+    }
 }

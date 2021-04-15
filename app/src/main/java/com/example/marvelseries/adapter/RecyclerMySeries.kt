@@ -38,7 +38,6 @@ import com.google.firebase.storage.FirebaseStorage
         override fun onBindViewHolder(holder: MySeriesViewHolder, position: Int) {
             val series = series[position]
             holder.textViewMySeriesTitle.text = series.title
-            holder.textViewMySeriesAno.text = series.startYear.toString()
 
             holder.itemView.setOnClickListener{
                 actionClick(series)

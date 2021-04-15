@@ -8,6 +8,7 @@ import com.example.marvelseries.Database.SeriesDao
 import com.example.marvelseries.api.service.ApiClient
 import com.example.marvelseries.model.SerieSave
 import com.example.marvelseries.model.Series
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
@@ -29,13 +30,16 @@ class DetalhesViewModel (private val seriesDao: SeriesDao) : ViewModel() {
     }
     fun salvarSerie(serie: Series){
 //        var series = SerieSave(id,ano)
-
-        seriesDao.create(serie)
+        val user = FirebaseAuth.getInstance().currentUser
+        var userid = user.uid
+        seriesDao.create(serie, userid)
 
     }
 
     fun removerDaLista(serie: Series)
     {
-            seriesDao.delete(serie)
+        val user = FirebaseAuth.getInstance().currentUser
+        var userid = user.uid
+            seriesDao.delete(serie, userid)
     }
 }

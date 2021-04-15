@@ -7,9 +7,9 @@ import com.google.firebase.firestore.QuerySnapshot
 
 
 interface SeriesDao {
-    fun create(serie: Series): Task<Void>
+    fun create(serie: Series, userid: String): Task<Void>
 
-    fun delete(serie: Series): Task<Void>
+    fun delete(serie: Series, userid: String): Task<Void>
 
     fun  all(userid:String): Task<QuerySnapshot>
 

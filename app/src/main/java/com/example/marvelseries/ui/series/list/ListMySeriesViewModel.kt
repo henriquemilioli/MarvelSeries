@@ -25,7 +25,7 @@ class ListMySeriesViewModel (private val seriesDao: SeriesDao) : ViewModel() {
 
     val user = FirebaseAuth.getInstance().currentUser
     var userid = user.uid
-    init {
+    fun getList() {
         viewModelScope.launch {
             seriesDao.all(userid).addOnSuccessListener {
                 val series = it.toObjects(Series::class.java)
